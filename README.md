@@ -1,5 +1,6 @@
 # Let's get a Hydra node running on Threefold grid
 
+![Alt text](threefold_hydra_node/docs/HydraThreeFoldTransparant.png?raw=true "Logo") 
 Our mission is to make an easy onboarding process to have a Hydra Node running on Threefold.
 The whole process should be as simple as possible and fully documented.
 
@@ -15,8 +16,8 @@ This WebApplication will accept user input, and send it to the Hydra Daemon
 ## Proof of concept: Can we run a Hydra node on Threefold?
 - Create a profile on https://play.grid.tf/
 - Create a new VM:
-  - FList: https://hub.grid.tf/weynandkuijpers.3bot/hydra.flist 
-    - Converted docker https://hub.docker.com/r/locktrip/hydra-node image via https://hub.grid.tf/ 
+  - FList: https://hub.grid.tf/weynandkuijpers.3bot/hydra.flist
+    - Converted docker https://hub.docker.com/r/locktrip/hydra-node image via https://hub.grid.tf/
     - Sourcecode docker: https://github.com/Hydra-Chain/community-tools/blob/main/node-docker/Dockerfile
   - Entry Point: /root/Hydra/bin/run-hydrad.sh
   - Root File System (GB): 5
@@ -36,7 +37,7 @@ Next poc:
   - [ ] Authenthication method?
     As we want to make the webapp as secure as possible, I was thinking to include a new standard of authentication, which is called WebAuthN (https://webauthn.io/) where you'll create a public/private key with a second device, which may be your mobile phone.
     The website webauthn.io allows you to test this new standard. It's a standard defined by the Web consortium, so in the feature all browsers are supposed to implement this
-      
+
 ## WebApp
 - [ ] Load environments variables
   - [ ] Which? to be decided
