@@ -6,10 +6,11 @@ The whole process should be as simple as possible and fully documented.
 The next step is to create a simple WebApplication that will be deployed to a virtual machine that also contains the Hydra Daemon.
 This WebApplication will accept user input, and send it to the Hydra Daemon
 
-## Official pages
+## Official Links
 - Hydra Chain: https://hydrachain.org/
 - Hydra Chain nodes: https://hydrachain.org/becoming-a-node
 - ThreeFold: https://threefold.io/
+- Community Telegram: https://t.me/hydra_ON_ThreeFold_Grid
 
 ## Proof of concept: Can we run a Hydra node on Threefold?
 - Create a profile on https://play.grid.tf/
