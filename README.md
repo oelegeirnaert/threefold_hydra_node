@@ -1,9 +1,9 @@
 # Let's get a Hydra node running on Threefold grid
 
 ## Intro
-In order to make it an easy onboarding process, we'd like to make the whole process a simple as possible.
-So next step is to create a simple WebApplication that also will be deployed to the same VM
-This webapplication will accept user input, and send it to the Hydra Daemon
+Our mission is to make an easy onboarding process to have a Hydra Node running on Threefold, so the whole process should be as simple as possible and fully documented.
+The next step is to create a simple WebApplication that will be deployed to a virtual machine, that also contains the Hydra Daemon.
+This WebApplication will accept user input, and send it to the Hydra Daemon
 
 ## Proof of concept: Can we run a Hydra node on Threefold?
 - Create a profile on https://play.grid.tf/
