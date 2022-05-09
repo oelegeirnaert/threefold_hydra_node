@@ -1,6 +1,11 @@
 # Let's get a Hydra node running on Threefold grid
 
-Proof of concept: Can we run a Hydra node on Threefold?
+## Intro
+In order to make it an easy onboarding process, we'd like to make the whole process a simple as possible.
+So next step is to create a simple WebApplication that also will be deployed to the same VM
+This webapplication will accept user input, and send it to the Hydra Daemon
+
+## Proof of concept: Can we run a Hydra node on Threefold?
 - Create a profile on https://play.grid.tf/
 - Create a new VM:
   - FList: https://hub.grid.tf/weynandkuijpers.3bot/hydra.flist 
@@ -21,12 +26,28 @@ Next poc:
 - [ ] Create new docker file
   - [ ] Install the Hydra Daemon
   - [ ] Install the Webserver for remote management of the Hydra node
-  - [ ] Authenthication method? To be decided but preferably SSH key pair (Can https://webauthn.io/ be an option?)
-
+  - [ ] Authenthication method?
+    As we want to make the webapp as secure as possible, I was thinking to include a new standard of authentication, which is called WebAuthN (https://webauthn.io/) where you'll create a public/private key with a second device, which may be your mobile phone.
+    The website webauthn.io allows you to test this new standard. It's a standard defined by the Web consortium, so in the feature all browsers are supposed to implement this
+      
 ## WebApp
 - [ ] Load environments variables
   - [ ] Which? to be decided
 
 ## Questions
 - [ ] How to secure against DDOS attacks?
+- [ ] How will we call our super fancy Hydra node running on ThreeFold?
+
+# How I see it?
+So, as a first step: we'll need to create a new docker with our new webapplication and hydra daemon > convert it to a new FLIST.
+Afterwards, this FLIST can be used to deploy a new VM with a public ip address.
+As this webapplication will have public ip address, it should be accessible after having your VM deployed.
+The webapplication will contain a mechanism to detect if it's the first launch.
+If it's the first launch, the webapplication will ask for new private/public keys (and probably via the new WebAuthN method) and save it into the environment variables of the virtual machine.
+Next, you'll need to authenticate with this new credentials into the webappliation and provide all the info needed to have a Hydra node running with delegated staking.
+
+After each save of the webapplication, the information needs to be sent to the Hydra daemon.
+A mechanism to read the node information should also be created to show it in our webapplicaction.
+
+
 
