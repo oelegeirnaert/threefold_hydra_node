@@ -6,6 +6,10 @@ The whole process should be as simple as possible and fully documented.
 The next step is to create a simple WebApplication that will be deployed to a virtual machine that also contains the Hydra Daemon.
 This WebApplication will accept user input, and send it to the Hydra Daemon
 
+## Official pages
+- Hydra Chain: https://hydrachain.org/
+- ThreeFold: https://threefold.io/
+
 ## Proof of concept: Can we run a Hydra node on Threefold?
 - Create a profile on https://play.grid.tf/
 - Create a new VM:
@@ -49,6 +53,3 @@ Next, you'll need to authenticate with this new credentials into the webappliati
 
 After each save of the webapplication, the information needs to be sent to the Hydra daemon.
 A mechanism to read the node information should also be created to show it in our webapplicaction.
-
-
-
