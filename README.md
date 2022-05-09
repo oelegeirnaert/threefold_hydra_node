@@ -8,8 +8,20 @@ Proof of concept: Can we run a Hydra node on Threefold?
   - Root File System (GB): 5
   - CPU: 2
   - Memory (MB): 2048
+  - Public IPV4 address
 
 - [x] Proof of concept succeeded - https://forum.threefold.io/t/grant-suggestion-deploy-a-hydra-node-on-tfgrid/2493/25
 
 Next poc:
 - [ ] Create a simple WebApp that can communicate with the Hydra Daemon
+
+# Roadmap WebApp POC
+- [ ] Create new docker file
+  - [ ] Install the Hydra Daemon
+  - [ ] Install the Webserver for remote management of the Hydra node
+  - [ ] Authenthication method? To be decided but preferably SSH key pair
+
+## WebApp
+- [ ] Load environments variables
+  - [ ] Which? to be decided
+
