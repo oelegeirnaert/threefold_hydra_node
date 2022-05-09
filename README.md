@@ -9,7 +9,7 @@ Proof of concept: Can we run a Hydra node on Threefold?
   - CPU: 2
   - Memory (MB): 2048
 
-- [x] Proof of concept succeeded
+- [x] Proof of concept succeeded - https://forum.threefold.io/t/grant-suggestion-deploy-a-hydra-node-on-tfgrid/2493/25
 
 Next poc:
 - [ ] Create a simple WebApp that can communicate with the Hydra Daemon
