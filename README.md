@@ -21,7 +21,7 @@ Next poc:
 - [ ] Create new docker file
   - [ ] Install the Hydra Daemon
   - [ ] Install the Webserver for remote management of the Hydra node
-  - [ ] Authenthication method? To be decided but preferably SSH key pair
+  - [ ] Authenthication method? To be decided but preferably SSH key pair (Can https://webauthn.io/ be an option?)
 
 ## WebApp
 - [ ] Load environments variables
