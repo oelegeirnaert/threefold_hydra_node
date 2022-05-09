@@ -1,6 +1,7 @@
 # Let's get a Hydra node running on Threefold grid
 
 ![Logo](docs/HydraThreeFoldTransparantSmall.png?raw=true "Logo")
+
 Our mission is to make an easy onboarding process to have a Hydra Node running on Threefold.
 The whole process should be as simple as possible and fully documented.
 
