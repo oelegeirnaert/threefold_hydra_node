@@ -8,6 +8,7 @@ This WebApplication will accept user input, and send it to the Hydra Daemon
 
 ## Official pages
 - Hydra Chain: https://hydrachain.org/
+- Hydra Chain nodes: https://hydrachain.org/becoming-a-node
 - ThreeFold: https://threefold.io/
 
 ## Proof of concept: Can we run a Hydra node on Threefold?
