@@ -3,7 +3,9 @@
 Proof of concept: Can we run a Hydra node on Threefold?
 - Create a profile on https://play.grid.tf/
 - Create a new VM:
-  - FList: https://hub.grid.tf/weynandkuijpers.3bot/hydra.flist (Converted docker https://hub.docker.com/r/locktrip/hydra-node image  via https://hub.grid.tf/ )
+  - FList: https://hub.grid.tf/weynandkuijpers.3bot/hydra.flist 
+    - Converted docker https://hub.docker.com/r/locktrip/hydra-node image via https://hub.grid.tf/ 
+    - Sourcecode docker: https://github.com/Hydra-Chain/community-tools/blob/main/node-docker/Dockerfile
   - Entry Point: /root/Hydra/bin/run-hydrad.sh
   - Root File System (GB): 5
   - CPU: 2
@@ -24,4 +26,7 @@ Next poc:
 ## WebApp
 - [ ] Load environments variables
   - [ ] Which? to be decided
+
+## Questions
+- [ ] How to secure against DDOS attacks?
 
