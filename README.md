@@ -60,6 +60,8 @@ A mechanism to read the node information should also be created to show it in ou
 
 ## Technologies?
 
+For the WebApp POC, we'll use Flask.
+
 ### Programming Language
 As I already did some projects in Django (Python) I'd go for this framework. There is already an existing package to implement the WebAuthN method (https://github.com/mkalioby/django-mfa2/)
 Django information: https://www.djangoproject.com/
@@ -67,3 +69,6 @@ Django information: https://www.djangoproject.com/
 ### Frameworks
 - Django Cookiecutter (bootstrapping a Django project): https://github.com/cookiecutter/cookiecutter-django
 - FrontEnd (MaterializeCSS which is based on the Google Design Principles) https://materializecss.com/breadcrumbs.html
+
+# Disclaimer
+Use this software on your own risk.
