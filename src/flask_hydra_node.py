@@ -1,8 +1,13 @@
 from typing import Dict
 import json
+import os
+import socket
+import subprocess
 
 from flask import Flask, render_template, request
 from flask_debug import Debug
+
+from src.helpers import hydra, threefold
 
 from webauthn import (
     generate_registration_options,
@@ -19,7 +24,7 @@ from webauthn.helpers.structs import (
 )
 from webauthn.helpers.cose import COSEAlgorithmIdentifier
 
-from .models import Credential, UserAccount
+from src.models import Credential, UserAccount
 
 
 # Create our Flask app
@@ -40,6 +45,8 @@ user_id = "some_random_user_identifier_like_a_uuid"
 username = f"your.name@{rp_id}"
 print(f"User ID: {user_id}")
 print(f"Username: {username}")
+print(f"{hydra.get_staking_info()}")
+print(f"{threefold.get_env_value('wallet_address')}")
 
 # A simple way to persist credentials by user ID
 in_memory_db: Dict[str, UserAccount] = {}
@@ -71,6 +78,9 @@ current_authentication_challenge = None
 def index():
     context = {
         "username": username,
+        "wallet_info": f"{hydra.get_wallet_info()}",
+        "staking_info": f"{hydra.get_staking_info()}",
+        "public_ssh_key": f"{threefold.get_env_value('ssh_key')}",
     }
     return render_template("index.html", **context)
 
