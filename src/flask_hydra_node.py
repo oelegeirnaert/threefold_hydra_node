@@ -7,7 +7,7 @@ import subprocess
 from flask import Flask, render_template, request
 from flask_debug import Debug
 
-from src.helpers import hydra, threefold
+from helpers import hydra, threefold
 
 from webauthn import (
     generate_registration_options,
@@ -24,7 +24,7 @@ from webauthn.helpers.structs import (
 )
 from webauthn.helpers.cose import COSEAlgorithmIdentifier
 
-from src.models import Credential, UserAccount
+from models import Credential, UserAccount
 
 
 # Create our Flask app

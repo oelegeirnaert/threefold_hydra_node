@@ -27,9 +27,10 @@ pip install -r requirements.txt
 
 ## Application ToDo's:
 - [x] Create POC WebApp in Flask
-- [ ] Create new docker image where Hydra daemon is included
-- [ ] Add flask to docker image
+- [x] Create new docker image where Hydra daemon is included
+- [x] Add flask to docker image
+- [ ] Get two services running in parallel: Hydra Daemon & Webserver
 - [ ] Make flask production ready
-- [ ] Update entry point (.sh script) to start hydra and gunicorn
+- [x] Update entry point (.sh script) to start hydra and gunicorn (IMPROVEMENT NEEDED)
 - [ ] Create new FLIST from Docker
 - [ ] Protect against DDOS attacks
