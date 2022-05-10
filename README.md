@@ -29,7 +29,7 @@ This WebApplication will accept user input, and send it to the Hydra Daemon
 - [x] Proof of concept succeeded - https://forum.threefold.io/t/grant-suggestion-deploy-a-hydra-node-on-tfgrid/2493/25
 
 Next poc:
-- [ ] Create a simple WebApp that can communicate with the Hydra Daemon
+- [ ] Create a simple WebApp that can communicate with the Hydra Daemon (WIP: https://github.com/oelegeirnaert/threefold_hydra_node/blob/main/docs/install.md)
 
 # Roadmap WebApp POC
 - [ ] Create new docker file
