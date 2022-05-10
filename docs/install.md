@@ -2,6 +2,9 @@
 
 ## Project Setup
 
+Currently using Falcon, but will be migrated to Flask.
+As we have found a repo that is already using the WebAuthn with flask.
+
 ~~~
 cd /opt
 
