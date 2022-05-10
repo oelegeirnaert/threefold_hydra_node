@@ -2,8 +2,7 @@
 
 ## Project Setup
 
-Currently using Falcon, but will be migrated to Flask.
-As we have found a repo that is already using the WebAuthn with flask.
+- [x] Currently using Falcon, but will be migrated to Flask. (As we have found a repo that is already using the WebAuthn with flask.)
 
 ~~~
 cd /opt
@@ -16,23 +15,21 @@ git clone https://github.com/oelegeirnaert/threefold_hydra_node.git
 python3 -m venv venv
 source venv/bin/activate
 
-pip install falcon gunicorn
+pip install -r requirements.txt
 ~~~
 
 
 ## Run the WebApp
 
 ~~~
-gunicorn --reload hydra_node:app -b 127.0.0.1:8089
+./start_server.sh
 ~~~
 
 ## Application ToDo's:
+- [x] Create POC WebApp in Flask
 - [ ] Create new docker image where Hydra daemon is included
-- [ ] Add falcon and gunicorn to the same docker image
+- [ ] Add flask to docker image
+- [ ] Make flask production ready
 - [ ] Update entry point (.sh script) to start hydra and gunicorn
 - [ ] Create new FLIST from Docker
-
-## Research ToDo's:
-- [ ] Server HTML pages from Falcon
-
-Flask Demo: https://github.com/duo-labs/duo-blog-going-passwordless-with-py-webauthn/blob/main/src/app.py
+- [ ] Protect against DDOS attacks
