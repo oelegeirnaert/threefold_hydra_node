@@ -34,3 +34,4 @@ pip install -r requirements.txt
 - [x] Update entry point (.sh script) to start hydra and gunicorn (IMPROVEMENT NEEDED)
 - [ ] Create new FLIST from Docker
 - [ ] Protect against DDOS attacks
+- [ ] Setup HTTPS
