@@ -5,8 +5,6 @@ import socket
 import subprocess
 
 from flask import Flask, render_template, request
-from flask_debug import Debug
-
 from helpers import hydra, threefold
 
 from webauthn import (
@@ -29,8 +27,6 @@ from models import Credential, UserAccount
 
 # Create our Flask app
 app = Flask(__name__)
-Debug(app)
-app.run(debug=True)
 
 ################
 #
