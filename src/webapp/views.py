@@ -44,7 +44,7 @@ user_id = "some_random_user_identifier_like_a_uuid"
 username = f"your.name@{rp_id}"
 print(f"User ID: {user_id}")
 print(f"Username: {username}")
-print(f"{hydra.get_hydra_info()}")
+print(f"{hydra.get_cli_info('getinfo')}")
 print(f"{threefold.get_env_value('APP_VERSION')}")
 
 # A simple way to persist credentials by user ID
@@ -77,7 +77,7 @@ current_authentication_challenge = None
 def index():
     context = {
         "username": username,
-        "wallet_info": f"{hydra.get_hydra_info('getinfo')}",
+        "wallet_info": f"{hydra.get_cli_info('getinfo')}",
         "staking_info": f"{hydra.get_staking_info()}",
         "public_ssh_key": f"{threefold.get_env_value('ssh_key')}",
     }
