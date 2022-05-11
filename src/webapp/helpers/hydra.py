@@ -80,3 +80,12 @@ def get_cli_info(hydra_cli_argument):
                 "walletversion": 169900,
             }
         return None
+
+
+def stop_server():
+    get_cli_info("stop")
+    print("STOPPING SERVER")
+
+
+def start_server():
+    print("START SERVER")

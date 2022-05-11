@@ -4,7 +4,7 @@ import os
 import socket
 import subprocess
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 from webapp.helpers import hydra, threefold
 from webapp.models import Credential, UserAccount
@@ -220,3 +220,15 @@ def hander_verify_authentication_response():
     user_credential.sign_count = verification.new_sign_count
 
     return {"verified": True}
+
+
+@app.route("/stop-server", methods=["GET"])
+def stop_hydra_server():
+    hydra.stop_server()
+    return redirect("/", code=302)
+
+
+@app.route("/start-server", methods=["GET"])
+def start_hydra_server():
+    hydra.start_server()
+    return redirect("/", code=302)
