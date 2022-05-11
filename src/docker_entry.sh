@@ -1,4 +1,4 @@
-echo "** Let's install & configure Thrydra V${APP_VERSION} **"
+echo "** Let's install & configure Thydra V${APP_VERSION} **"
 
 echo ""
 echo "Getting Repo from ${REPO_URL} ..."
@@ -16,8 +16,8 @@ echo ""
 pip install -r $PIP_REQUIRMENTS_FILE
 
 echo ""
-echo "Run flask on host: ${FLASK_HOST}"
-echo "From file: ${PIP_REQUIRMENTS_FILE}"
+echo "Run flask on host: ${FLASK_HOST} on port ${FLASK_RUN_PORT}"
+echo "Flask App: ${FLASK_APP}"
 echo ""
 flask run -h $FLASK_HOST
 
