@@ -4,4 +4,4 @@ import subprocess
 
 
 def get_env_value(from_key):
-    return os.environ.get(from_key.upper(), "Cannot load your key from the environment variables.")
+    return os.environ.get(from_key.upper())

@@ -37,8 +37,9 @@ if __name__ == "__main__":
 #
 ################
 
-rp_id = "localhost"
-origin = "http://localhost:5000"
+socket_hostname = socket.gethostname()
+rp_id = socket_hostname
+origin = f"http://{socket_hostname}:5000"
 rp_name = "Sample RP"
 user_id = "some_random_user_identifier_like_a_uuid"
 username = f"your.name@{rp_id}"
@@ -79,10 +80,10 @@ def index():
         "username": username,
         "app_name": threefold.get_env_value("WEBAPP_NAME"),
         "app_version": threefold.get_env_value("WEBAPP_VERSION"),
-        "general_info": f"{hydra.get_cli_info('getinfo')}",
-        "wallet_info": f"{hydra.get_cli_info('getwalletinfo')}",
-        "staking_info": f"{hydra.get_cli_info('getstakinginfo')}",
-        "public_ssh_key": f"{threefold.get_env_value('ssh_key')}",
+        "general_info": hydra.get_cli_info("getinfo"),
+        "wallet_info": hydra.get_cli_info("getwalletinfo"),
+        "staking_info": hydra.get_cli_info("getstakinginfo"),
+        "public_ssh_key": threefold.get_env_value("SSH_KEY"),
     }
     return render_template("index.html", **context)
 

@@ -7,16 +7,24 @@
     <script src="static/simplewebauthn-browser.4.1.0.umd.min.js"></script>
     <link rel="stylesheet" href="static/style.css" />
 
-    <title>Going Passwordless with py_webauthn (Sample RP)</title>
+    <title>{{app_name}} v{{app_version}}</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>Hydra Node on ThreeFold (AppName:{{app_name}} v{{app_version}})</h1>
+        <h1>Hydra Node on ThreeFold</h1>
+        {% if app_name and app_version %}
+        <p style="padding-top: -5px">{{app_name}} v{{app_version}}</p>
+        {% endif %}
         <section style="padding: 20px;">
-          <p>General Info: {{general_info}}</p>
-          <p>Wallet Info: {{wallet_info}}</p>
-          <p>Staking Info: {{staking_info}}</p>
+          {% if general_info %}
+            {% include "hydra/general_info.html" %}
+            {% include "hydra/wallet_info.html" %}
+            {% include "hydra/staking_info.html" %}
+          {% else %}
+            <p class="red">Hydra Application not found. test</p>
+          {% endif %}
+
           <p>Public SSH Key: {{public_ssh_key}}</p>
         </section>
 
