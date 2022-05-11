@@ -20,4 +20,3 @@ tomli==1.2.3
 typing_extensions==4.0.1
 webauthn==1.2.1
 Werkzeug==2.0.2
-Flask-Debug==0.4.3
