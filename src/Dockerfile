@@ -2,6 +2,7 @@
 
 FROM ubuntu:20.04
 
+# Environment Variables
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update -y
@@ -41,7 +42,7 @@ ARG MAINNET_PORT=3338
 EXPOSE $TESTNET_PORT
 EXPOSE $MAINNET_PORT
 
-COPY ./get-repo.sh /root/Hydra/bin/get-repo.sh
+COPY ./docker_entry.sh /root/Hydra/bin/docker_entry.sh
 
 ENV PATH="/root/Hydra/bin:${PATH}"
 
@@ -61,15 +62,17 @@ ENV VIRTUAL_ENV=/opt/hydra_threefold/venv
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-
-
-# To be changed
-ENV FLASK_APP=/opt/hydra_threefold/src/flask_hydra_node.py
-ENV FLASK_ENV=development
-
-
-
+#Expose 5000 for Flask
 EXPOSE 5000
 
 # ENTRYPOINT ["/bin/sh", "-c" , "run-flask.sh && run-hydrad.sh"]
-ENTRYPOINT ["/bin/sh", "-c" , "get-repo.sh"]
+
+ENV APP_VERSION=1.1
+ENV REPO_URL=https://github.com/oelegeirnaert/threefold_hydra_node.git
+ENV REPO_DESTINATION=/opt/hydra_threefold/threefold_hydra_node
+ENV PIP_REQUIRMENTS_FILE=$REPO_DESTINATION/src/requirements.txt
+ENV FLASK_APP=$REPO_DESTINATION/src/flask_hydra_node.py
+ENV FLASK_ENV=development
+ENV FLASK_HOST=0.0.0.0
+
+ENTRYPOINT ["/bin/sh", "-c" , "docker_entry.sh"]
