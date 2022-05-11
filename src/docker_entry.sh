@@ -1,5 +1,8 @@
 echo "** Let's install & configure Thydra V${APP_VERSION} **"
 
+echo """ Starting Hydra Daemon """
+hydrad -daemon -server
+
 echo ""
 echo "Getting Repo from ${REPO_URL} ..."
 echo "Saving repository to: ${REPO_DESTINATION}."
