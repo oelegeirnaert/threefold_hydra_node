@@ -16,6 +16,7 @@
         {% if app_name and app_version %}
         <p style="padding-top: -5px">{{app_name}} v{{app_version}}</p>
         {% endif %}
+        {% include "hydra/server_commands.html" %}
         <section style="padding: 20px;">
           {% if general_info %}
             {% include "hydra/general_info.html" %}
