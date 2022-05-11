@@ -78,7 +78,7 @@ def index():
     context = {
         "username": username,
         "app_name": threefold.get_env_value("WEBAPP_NAME"),
-        "app_version": threefold.get_env_value("WEBAPP_VESION"),
+        "app_version": threefold.get_env_value("WEBAPP_VERSION"),
         "general_info": f"{hydra.get_cli_info('getinfo')}",
         "wallet_info": f"{hydra.get_cli_info('getwalletinfo')}",
         "staking_info": f"{hydra.get_cli_info('getstakinginfo')}",
