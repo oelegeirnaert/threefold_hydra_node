@@ -5,6 +5,8 @@ import socket
 import subprocess
 
 from flask import Flask, render_template, request
+from flask_debug import Debug
+
 from helpers import hydra, threefold
 
 from webauthn import (
@@ -27,6 +29,8 @@ from models import Credential, UserAccount
 
 # Create our Flask app
 app = Flask(__name__)
+Debug(app)
+app.run(debug=True)
 
 ################
 #
@@ -213,3 +217,7 @@ def hander_verify_authentication_response():
     user_credential.sign_count = verification.new_sign_count
 
     return {"verified": True}
+
+
+if __name__ == "__main__":
+    create_app().run()
