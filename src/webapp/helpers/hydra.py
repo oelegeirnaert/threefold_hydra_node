@@ -88,4 +88,11 @@ def stop_server():
 
 
 def start_server():
+    try:
+        p = subprocess.check_output("hydrad -server -daemon".split()).decode("utf8").replace("'", '"')
+        data = json.loads(p)
+        s = json.dumps(data, indent=4, sort_keys=True)
+        return s
+    except Exception as e:
+        print(e)
     print("START SERVER")
