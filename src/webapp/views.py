@@ -77,8 +77,11 @@ current_authentication_challenge = None
 def index():
     context = {
         "username": username,
-        "wallet_info": f"{hydra.get_cli_info('getinfo')}",
-        "staking_info": f"{hydra.get_staking_info()}",
+        "app_name": threefold.get_env_value("WEBAPP_NAME"),
+        "app_version": threefold.get_env_value("WEBAPP_VESION"),
+        "general_info": f"{hydra.get_cli_info('getinfo')}",
+        "wallet_info": f"{hydra.get_cli_info('getwalletinfo')}",
+        "staking_info": f"{hydra.get_cli_info('getstakinginfo')}",
         "public_ssh_key": f"{threefold.get_env_value('ssh_key')}",
     }
     return render_template("index.html", **context)

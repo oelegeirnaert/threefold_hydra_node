@@ -1,4 +1,4 @@
-echo "** Let's install & configure Thydra V${APP_VERSION} **"
+echo "** Let's install & configure ${WEBAPP_NAME} V${WEBAPP_VERSION} **"
 
 echo """ Starting Hydra Daemon """
 hydrad -daemon -server

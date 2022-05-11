@@ -67,7 +67,8 @@ EXPOSE 5000
 
 # ENTRYPOINT ["/bin/sh", "-c" , "run-flask.sh && run-hydrad.sh"]
 
-ENV APP_VERSION=1.1
+ENV WEBAPP_NAME=Thydra
+ENV WEBAPP_VERSION=1.1
 ENV REPO_URL=https://github.com/oelegeirnaert/threefold_hydra_node.git
 ENV REPO_DESTINATION=/opt/hydra_threefold/threefold_hydra_node
 ENV PIP_REQUIRMENTS_FILE=$REPO_DESTINATION/src/requirements.txt
