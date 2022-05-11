@@ -1,8 +1,5 @@
 #!/bin/bash
 
-FLASK_ENV=development FLASK_APP=threefold_hydra_node/src/flask_hydra_node:app /opt/venv/bin/flask run -h 0.0.0.0
-
-
 TESTNET=${TESTNET:-false}
 STAKING=${STAKING:-1}
 # the flag does NOT accept true/false it is 1/0

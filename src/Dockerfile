@@ -20,7 +20,7 @@ RUN ./db-4.8.30.NC/dist/configure --enable-cxx --prefix=/usr/local
 RUN make && make install
 
 RUN apt update -y
-RUN apt-get -y install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler qrencode git python3.8-venv
+RUN apt-get -y install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler qrencode git python3.8-venv nano
 
 # set timezone
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -41,28 +41,35 @@ ARG MAINNET_PORT=3338
 EXPOSE $TESTNET_PORT
 EXPOSE $MAINNET_PORT
 
-COPY ./run-hydrad.sh /root/Hydra/bin/run-hydrad.sh
+COPY ./get-repo.sh /root/Hydra/bin/get-repo.sh
 
 ENV PATH="/root/Hydra/bin:${PATH}"
 
 WORKDIR /root/Hydra/bin
-RUN chmod +x ./run-hydrad.sh
-CMD ["./run-hydrad.sh"]
+# RUN chmod +x ./run-hydrad.sh
+# RUN chmod +x ./run-flask.sh
+#CMD ["./run-hydrad.sh"]
 
 # Added by Oele Geirnaert
+WORKDIR /opt/
 RUN mkdir hydra_threefold
-
 RUN cd hydra_threefold
 
-RUN git clone https://github.com/oelegeirnaert/threefold_hydra_node.git
+# RUN git clone https://github.com/oelegeirnaert/threefold_hydra_node.git
 
-ENV VIRTUAL_ENV=/opt/venv
+ENV VIRTUAL_ENV=/opt/hydra_threefold/venv
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-COPY *.* ./
-RUN pip install -r requirements.txt
 
-#RUN FLASK_ENV=development FLASK_APP=src/flask_hydra_node:app $PATH/flask run -h localhost
+
+# To be changed
+ENV FLASK_APP=/opt/hydra_threefold/src/flask_hydra_node.py
+ENV FLASK_ENV=development
+
+
 
 EXPOSE 5000
+
+# ENTRYPOINT ["/bin/sh", "-c" , "run-flask.sh && run-hydrad.sh"]
+ENTRYPOINT ["/bin/sh", "-c" , "get-repo.sh"]
