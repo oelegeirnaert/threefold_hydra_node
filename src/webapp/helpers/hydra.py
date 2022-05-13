@@ -5,7 +5,7 @@ import json
 
 
 def get_fake_response():
-    return os.environ.get("FAKE_HYDRA_RESPONSE").lower() in [
+    return os.environ.get("FAKE_HYDRA_RESPONSE", "false").lower() in [
         "true",
         "1",
         "t",
