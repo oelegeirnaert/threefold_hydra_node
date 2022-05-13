@@ -1,0 +1,24 @@
+<nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo" style="padding-left: 10px;">Hydra Node on ThreeFold
+        {% if app_name and app_version %}
+        <span style="padding-left: -5px; font-size: 0.6em; color: gray;">{{app_name}} v{{app_version}}</span>
+        {% endif %}
+      </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="info.html">Info</a></li>
+        <li><a href="logs.html">Logs</a></li>
+        {% with with_error_message=false%}
+          <li>{% include "hydra/server_commands.html" %}</li>
+        {% endwith %}
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="info.html">Info</a></li>
+    <li><a href="logs.html">Logs</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+  </ul>

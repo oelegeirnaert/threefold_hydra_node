@@ -1,0 +1,26 @@
+<script type="text/javascript">
+const currentDate = new Date();
+const local_timestamp = currentDate.getTime();
+const server_timestamp = {{ server_epoch_time }};
+var timestamp_difference = local_timestamp - server_timestamp;
+</script>
+
+
+
+<div class="" id="local_epoch_time">
+
+</div>
+
+<div class="" id="server_epoch_time">
+
+</div>
+
+<div class="" id="timestamp_difference">
+
+</div>
+
+<script type="text/javascript">
+  document.getElementById("local_epoch_time").innerHTML="Local Timestamp: "+ local_timestamp;
+  document.getElementById("server_epoch_time").innerHTML="Server Timestamp: "+ server_timestamp;
+  document.getElementById("timestamp_difference").innerHTML="Difference: "+ timestamp_difference + " (Values lower than 1000 is ok!)";
+</script>

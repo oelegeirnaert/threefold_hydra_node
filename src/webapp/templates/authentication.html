@@ -1,0 +1,33 @@
+<div class="form-container">
+  Username:
+  <input
+    type="text"
+    name="username"
+    id="username"
+    value="{{ username }}"
+    disabled
+  />
+  <button id="btnRegister">Register</button>
+  <button id="btnAuthenticate">Authenticate</button>
+</div>
+</header>
+<main>
+<details>
+  <summary>Debug Info</summary>
+  <!-- Registration -->
+  <section>
+    <p class="bold">Registration</p>
+    <p>Status: <span id="statusRegister"></span></p>
+    <p>Raw Output:</p>
+    <textarea id="dbgRegister" spellcheck="false"></textarea>
+  </section>
+  <!-- Authentication -->
+  <section>
+    <p class="bold">Authentication</p>
+    <p>Status: <span id="statusAuthenticate"></span></p>
+    <p>Raw Output:</p>
+    <textarea id="dbgAuthenticate" spellcheck="false"></textarea>
+  </section>
+</details>
+<div class="debug-container"></div>
+</main>

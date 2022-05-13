@@ -1,3 +1,5 @@
+M.AutoInit();
+
 const { startRegistration, startAuthentication } = SimpleWebAuthnBrowser;
 
 // Registration

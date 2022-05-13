@@ -5,67 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="static/simplewebauthn-browser.4.1.0.umd.min.js"></script>
-    <link rel="stylesheet" href="static/style.css" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="static/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
 
     <title>{{app_name}} v{{app_version}}</title>
   </head>
+
   <body>
+    {% include 'navigation/main.html' %}
     <div class="container">
       <header>
-        <h1>Hydra Node on ThreeFold</h1>
-        {% if app_name and app_version %}
-        <p style="padding-top: -5px">{{app_name}} v{{app_version}}</p>
+        {% if not wallet_info %}
+          {% with with_error_message=true %}
+            {% include "hydra/server_commands.html" %}
+          {% endwith %}
         {% endif %}
-        {% include "hydra/server_commands.html" %}
+        {{ name_server_pri }}
         <section style="padding: 20px;">
           {% if general_info %}
-            {% include "hydra/general_info.html" %}
-            {% include "hydra/wallet_info.html" %}
-            {% include "hydra/staking_info.html" %}
-          {% else %}
-            <p class="red">Hydra Application not running or not installed.</p>
+            {% include "hydra/all_info.html" %}
           {% endif %}
-
-          <p>Public SSH Key: {{public_ssh_key}}</p>
         </section>
-
-        <div class="form-container">
-          <h2>Username:</h2>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            value="{{ username }}"
-            disabled
-          />
-          <button id="btnRegister">Register</button>
-          <button id="btnAuthenticate">Authenticate</button>
-        </div>
-      </header>
-      <main>
-        <h2></h2>
-        <details>
-          <summary>Debug Info</summary>
-          <!-- Registration -->
-          <section>
-            <h3>Registration</h3>
-            <p>Status: <span id="statusRegister"></span></p>
-            <h4>Raw Output:</h4>
-            <textarea id="dbgRegister" spellcheck="false"></textarea>
-          </section>
-          <!-- Authentication -->
-          <section>
-            <h3>Authentication</h3>
-            <p>Status: <span id="statusAuthenticate"></span></p>
-            <h4>Raw Output:</h4>
-            <textarea id="dbgAuthenticate" spellcheck="false"></textarea>
-          </section>
-        </details>
-        <div class="debug-container"></div>
-      </main>
     </div>
 
+
+
     <script src="static/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
   </body>
 </html>

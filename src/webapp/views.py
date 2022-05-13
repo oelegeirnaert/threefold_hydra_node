@@ -38,8 +38,8 @@ if __name__ == "__main__":
 ################
 
 socket_hostname = socket.gethostname()
-rp_id = socket_hostname
-origin = f"http://{socket_hostname}:5000"
+rp_id = "localhost"
+origin = f"http://localhost:8001"
 rp_name = "Sample RP"
 user_id = "some_random_user_identifier_like_a_uuid"
 username = f"your.name@{rp_id}"
@@ -78,12 +78,14 @@ current_authentication_challenge = None
 def index():
     context = {
         "username": username,
+        "fake_response": hydra.get_fake_response(),
         "app_name": threefold.get_env_value("WEBAPP_NAME"),
         "app_version": threefold.get_env_value("WEBAPP_VERSION"),
         "general_info": hydra.get_cli_info("getinfo"),
         "wallet_info": hydra.get_cli_info("getwalletinfo"),
         "staking_info": hydra.get_cli_info("getstakinginfo"),
         "public_ssh_key": threefold.get_env_value("SSH_KEY"),
+        "server_epoch_time": threefold.get_server_epoch_time(),
     }
     return render_template("index.html", **context)
 

@@ -1,7 +1,13 @@
-<ul>
-{% if wallet_info %}
-<li><a href="/stop-server">Stop Server</a></li>
-{% else %}
-<li><a href="/start-server">Start Server</a></li>
+{%if with_error_message and not wallet_info %}
+<div style="padding-top: 40vh;">
+  <p class="red center-align">Hydra Application not running or not installed.</p>
+</div>
 {% endif %}
-</ul>
+
+<center>
+{% if wallet_info %}
+<a class="waves-effect waves-light btn" href="/stop-server"><i class="material-icons left">pause_circle_outline</i>Stop Server</a>
+{% else %}
+<a class="waves-effect waves-light btn" href="/start-server"><i class="material-icons left">directions_run</i>Start Server</a>
+{% endif %}
+</center>
