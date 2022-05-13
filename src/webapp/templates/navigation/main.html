@@ -7,18 +7,11 @@
       </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="info.html">Info</a></li>
-        <li><a href="logs.html">Logs</a></li>
-        {% with with_error_message=false%}
-          <li>{% include "hydra/server_commands.html" %}</li>
-        {% endwith %}
+        {% include "navigation/main_list.html" %}
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="info.html">Info</a></li>
-    <li><a href="logs.html">Logs</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
+    {% include "navigation/main_list.html" %}
   </ul>
