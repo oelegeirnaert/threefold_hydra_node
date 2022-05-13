@@ -35,3 +35,5 @@ pip install -r requirements.txt
 - [ ] Create new FLIST from Docker
 - [ ] Protect against DDOS attacks
 - [ ] Setup HTTPS
+- [ ] Show Time (important for Blockchain)
+- [ ] Make a page for logs
