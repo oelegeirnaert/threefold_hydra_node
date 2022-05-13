@@ -29,11 +29,12 @@ pip install -r requirements.txt
 - [x] Create POC WebApp in Flask
 - [x] Create new docker image where Hydra daemon is included
 - [x] Add flask to docker image
-- [ ] Get two services running in parallel: Hydra Daemon & Webserver
+- [x] Get two services running in parallel: Hydra Daemon & Webserver
 - [ ] Make flask production ready
 - [x] Update entry point (.sh script) to start hydra and gunicorn (IMPROVEMENT NEEDED)
-- [ ] Create new FLIST from Docker
+- [ ] Create new FLIST from Docker (wip)
 - [ ] Protect against DDOS attacks
 - [ ] Setup HTTPS
-- [ ] Show Time (important for Blockchain)
+- [x] Show Time (important for Blockchain)
 - [ ] Make a page for logs
+- [ ] Update software button
