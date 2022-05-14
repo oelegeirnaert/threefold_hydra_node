@@ -239,7 +239,7 @@ def start_hydra_server():
 @app.route("/stream")
 def stream():
     def generate():
-        with open("~/.hydra/debug.log") as f:
+        with open("/root/.hydra/debug.log") as f:
             while True:
                 yield f.read()
                 sleep(1)
