@@ -36,4 +36,5 @@ pip install -r requirements.txt
 - [ ] Protect against DDOS attacks
 - [ ] Setup HTTPS
 - [ ] Show Time (important for Blockchain)
-- [ ] Make a page for logs 
+- [ ] Make a page for logs (~/.hydra# tail -f debug.log)
+- [ ] Make webapp updateable
