@@ -1,0 +1,15 @@
+<!-- https://stackoverflow.com/questions/35540885/display-the-contents-of-a-log-file-as-it-is-updated -->
+
+
+<pre id="output"></pre>
+<script>
+    var output = document.getElementById('output');
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '{{ url_for('stream') }}');
+    xhr.send();
+
+    setInterval(function() {
+        output.textContent = xhr.responseText;
+    }, 1000);
+</script>

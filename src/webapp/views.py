@@ -234,3 +234,14 @@ def stop_hydra_server():
 def start_hydra_server():
     hydra.start_server()
     return redirect("/", code=302)
+
+
+@app.route("/stream")
+def stream():
+    def generate():
+        with open("~/.hydra/debug.log") as f:
+            while True:
+                yield f.read()
+                sleep(1)
+
+    return app.response_class(generate(), mimetype="text/plain")
