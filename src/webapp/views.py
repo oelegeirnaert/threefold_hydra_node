@@ -254,6 +254,6 @@ def stream():
         with open("/root/.hydra/debug.log") as f:
             while True:
                 yield f.read()
-                sleep(1)
+                sleep(10)
 
     return app.response_class(generate(), mimetype="text/plain")
