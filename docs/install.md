@@ -37,4 +37,4 @@ pip install -r requirements.txt
 - [ ] Setup HTTPS
 - [x] Show Time (important for Blockchain)
 - [x] Make a page for logs (/root/.hydra/debug.log)
-- [ ] Make webapp updateable
+- [ ] Make webapp updateable (wip)
