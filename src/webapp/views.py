@@ -243,6 +243,11 @@ def update_app():
     return redirect("/", code=200)
 
 
+@app.route("/logs", methods=["GET"])
+def logs():
+    return render_template("logs.html")
+
+
 @app.route("/stream")
 def stream():
     def generate():
