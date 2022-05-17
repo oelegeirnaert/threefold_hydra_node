@@ -1,14 +1,8 @@
-echo "** Let's install & configure ${WEBAPP_NAME} V${WEBAPP_VERSION} **"
-
-echo """ Starting Hydra Daemon """
-hydrad -daemon -server
-
 echo ""
-echo "Getting Repo from ${REPO_URL} ..."
-echo "Saving repository to: ${REPO_DESTINATION}."
+echo "Getting last repo version from ${REPO_URL} ..."
 echo ""
 
-git clone $REPO_URL $REPO_DESTINATION
+git pull
 
 echo ""
 echo "Installing requirements..."
@@ -24,4 +18,3 @@ echo ""
 flask run -h $FLASK_HOST
 
 echo "Ready..."
-while true; do sleep 30; done;

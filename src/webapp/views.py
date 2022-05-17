@@ -7,7 +7,7 @@ from time import sleep
 
 from flask import Flask, render_template, request, redirect
 
-from webapp.helpers import hydra, threefold
+from webapp.helpers import hydra, threefold, git
 from webapp.models import Credential, UserAccount
 
 from webauthn import (
@@ -87,6 +87,7 @@ def index():
         "staking_info": hydra.get_cli_info("getstakinginfo"),
         "public_ssh_key": threefold.get_env_value("SSH_KEY"),
         "server_epoch_time": threefold.get_server_epoch_time(),
+        "git_repo_version": git.get_git_revision_short_hash(),
     }
     return render_template("index.html", **context)
 
@@ -228,13 +229,19 @@ def hander_verify_authentication_response():
 @app.route("/stop-server", methods=["GET"])
 def stop_hydra_server():
     hydra.stop_server()
-    return redirect("/", code=302)
+    return redirect("/", code=200)
 
 
 @app.route("/start-server", methods=["GET"])
 def start_hydra_server():
     hydra.start_server()
-    return redirect("/", code=302)
+    return redirect("/", code=200)
+
+
+@app.route("/update-app", methods=["GET"])
+def update_app():
+    git.update_from_git()
+    return redirect("/", code=200)
 
 
 @app.route("/stream")
