@@ -87,7 +87,6 @@ def index():
         "staking_info": hydra.get_cli_info("getstakinginfo"),
         "public_ssh_key": threefold.get_env_value("SSH_KEY"),
         "server_epoch_time": threefold.get_server_epoch_time(),
-        "git_repo_version": git.get_git_revision_short_hash(),
     }
     return render_template("index.html", **context)
 
