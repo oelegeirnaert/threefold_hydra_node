@@ -240,8 +240,7 @@ def start_hydra_server():
 @app.route("/update-app", methods=["GET"])
 def update_app():
     git.update_from_git()
-    sleep(2)
-    return redirect("/test", code=200)
+    return redirect("/", code=200)
 
 
 @app.route("/stream")
