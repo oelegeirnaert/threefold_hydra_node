@@ -4,6 +4,8 @@ import os
 import socket
 import subprocess
 from time import sleep
+import markdown
+import requests
 
 from flask import Flask, render_template, request, redirect
 
@@ -30,6 +32,7 @@ from webauthn.helpers.cose import COSEAlgorithmIdentifier
 app = Flask(__name__)
 if __name__ == "__main__":
     app.run(debug=True)
+    Markdown(app)
 
 
 ################
@@ -246,6 +249,19 @@ def update_app():
 @app.route("/logs", methods=["GET"])
 def logs():
     return render_template("logs.html")
+
+
+@app.route("/read-me", methods=["GET"])
+def read_me():
+
+    md_text = requests.get(
+        "https://raw.githubusercontent.com/oelegeirnaert/threefold_hydra_node/main/docs/install.md"
+    ).text
+    md_text = markdown.markdown(md_text)
+    context = {
+        "md_text": md_text,
+    }
+    return render_template("read_me.html", **context)
 
 
 @app.route("/stream")

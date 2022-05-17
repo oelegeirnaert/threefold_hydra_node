@@ -1,5 +1,6 @@
 <li><a href="{{ url_for('index') }}">Home</a></li>
 <li><a href="{{ url_for('logs') }}">Logs</a></li>
+<li><a href="{{ url_for('read_me') }}">Read Me</a></li>
 <li><a href="{{ url_for('update_app') }}">Update</a></li>
 {% with with_error_message=false%}
   <li>{% include "hydra/server_commands.html" %}</li>

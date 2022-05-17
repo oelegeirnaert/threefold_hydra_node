@@ -2,11 +2,6 @@
 
 {% block content %}
 <header>
-  <p>
-    Our mission is to make an easy onboarding process to have a Hydra Node running on Threefold. The whole process should be as simple as possible and fully documented.
-    The next step is to create a simple WebApplication that will be deployed to a virtual machine that also contains the Hydra Daemon. This WebApplication will accept user input, and send it to the Hydra Daemon
-  </p>
-  <center><img width="300px;" src="static/img/HydraThreeFoldTransparant.png" /></center>
   {% if not wallet_info %}
     {% with with_error_message=true %}
       {% include "hydra/server_commands.html" %}
@@ -18,4 +13,5 @@
       {% include "hydra/all_info.html" %}
     {% endif %}
   </section>
+  {% include "authentication.html" %}
   {% endblock %}
