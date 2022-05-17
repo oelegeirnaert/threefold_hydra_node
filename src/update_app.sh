@@ -1,3 +1,10 @@
+echo "Updating WebApp..."
+
+echo ""
+echo "Changing directory to: ${REPO_DESTINATION}"
+echo ""
+CD $REPO_DESTINATION
+
 echo ""
 echo "Getting last repo version from ${REPO_URL} ..."
 echo ""
